@@ -41,7 +41,6 @@ private:
 
 
     // referenced in dsa lecture slides, with balance factor and height, balance factor can call height to get the necessary values, but I also use height in my level count method
-    //also idea from udemy course I have been doing in parallel https://www.udemy.com/course/datastructurescncpp/learn/lecture/13111118#overview lecture 318
     int getHeight(BST::TreeNode* helpRoot) {
         if (helpRoot == nullptr) {
             return 0;
@@ -50,7 +49,6 @@ private:
     }
 
     // lecture 4 page 26, var is used for balance factor of the AVL tree to determine what rotations to do
-    //also idea from udemy course I have been doing in parallel https://www.udemy.com/course/datastructurescncpp/learn/lecture/13111118#overview lecture 318
     int balanceFactor(BST::TreeNode* helpRoot) {
         if (helpRoot == nullptr) {
             return 0;
@@ -72,7 +70,6 @@ public:
 };
 
 //used lecture content for rotate left Lecture 4 AVL Tree page 14
-//also idea from udemy course I have been doing in parallel https://www.udemy.com/course/datastructurescncpp/learn/lecture/13111118#overview lecture 314
 BST::TreeNode* BST::rotateLeft(BST::TreeNode* helpRoot) {
     BST::TreeNode* grandchild = helpRoot->right->left;
     BST::TreeNode* newParent = helpRoot->right;
@@ -82,7 +79,6 @@ BST::TreeNode* BST::rotateLeft(BST::TreeNode* helpRoot) {
 }
 
 //used lecture content for rotate left Lecture 4 AVL Tree page 14 just the opposite to perform the right rotation rather than left
-//also idea from udemy course I have been doing in parallel https://www.udemy.com/course/datastructurescncpp/learn/lecture/13111118#overview lecture 314
 BST::TreeNode* BST::rotateRight(BST::TreeNode* helpRoot) {
     BST::TreeNode* grandchild = helpRoot->left->right;
     BST::TreeNode* newParent = helpRoot->left;
@@ -91,7 +87,6 @@ BST::TreeNode* BST::rotateRight(BST::TreeNode* helpRoot) {
     return newParent;
 }
 
-//also idea from udemy course I have been doing in parallel https://www.udemy.com/course/datastructurescncpp/learn/lecture/13111118#overview lecture 315
 BST::TreeNode* BST::rotateLeftRight(BST::TreeNode* helpRoot) {
     // first perform the left rotation by passing in the child left subtree node
     helpRoot->left = rotateLeft(helpRoot->left);
@@ -100,7 +95,6 @@ BST::TreeNode* BST::rotateLeftRight(BST::TreeNode* helpRoot) {
     // the above logic was implemented after my AVL discussion section
 }
 
-//also idea from udemy course I have been doing in parallel https://www.udemy.com/course/datastructurescncpp/learn/lecture/13111118#overview lecture 315
 BST::TreeNode* BST::rotateRightLeft(BST::TreeNode* helpRoot) {
     // inverse of the rotateLeftRight function, rotate right is done first and then return the left rotation of that performed right rotation
     helpRoot->right = rotateRight(helpRoot->right); // pass in the child right subtree node and then rotate the parent in the subsequent line
@@ -204,7 +198,6 @@ BST::TreeNode* BST::findMinimumNode(TreeNode* helpRoot) {
     return helpRoot;
 }
 
-//also idea from udemy course I have been doing in parallel https://www.udemy.com/course/datastructurescncpp/learn/lecture/13111118#overview lecture 316-318
 BST::TreeNode* BST::removeIDHelper(TreeNode* helpRoot, int ID) {
     // return the updated root
     // need to handle root deletion, no child deletion, 1 child deletion, 2 child deletion
